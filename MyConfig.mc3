@@ -89,6 +89,10 @@
          <string>class com.microchip.mcc.libraries.mchpiot.basic.IoT</string>
       </entry>
       <entry>
+         <string>AirQuality</string>
+         <string>class com.microchip.mikrobus.AirQuality.AirQuality</string>
+      </entry>
+      <entry>
          <string>I2C2</string>
          <string>class com.microchip.mcc.foundationservices.mcu16.modules.peripheraldriver.i2c.I2C</string>
       </entry>
@@ -113,6 +117,7 @@
       <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.foundationservices.library.FoundationServicesLibrary" version="0.1.32-release.1"/>
       <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.mcu16.Mcu16PeripheralLibrary" version="1.105"/>
       <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.libraries.mchpiot.MCHPIoTLibrary" version="1.1.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.mikroEClickLibrary.MikroEClickLibrary" version="1.0.27"/>
    </usedLibraries>
    <tokenMap class="java.util.HashMap">
       <entry>
@@ -3804,6 +3809,10 @@
          <value>disabled</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="AirQuality" name="MIKROBASE_CustomKeyName"/>
+         <value>InitialValue</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="ADC1" registerAlias="ADCON3" settingAlias="SAMC" alias="3"/>
          <value>3</value>
       </entry>
@@ -4558,6 +4567,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="SPI1" registerAlias="SPICON1L" settingAlias="MSTEN" alias="Slave"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="AirQuality" name="spiEnable"/>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCNB" settingAlias="IOCNB5" alias="disabled"/>
@@ -6009,7 +6022,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC1" name="AN6"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC1" name="AN3"/>
@@ -6098,6 +6111,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCNC" settingAlias="IOCNC9" alias="disabled"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="AirQuality" name="isFoundationServicesLibraryLoaded"/>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART1" registerAlias="USTA" settingAlias="ADDEN" alias="enabled"/>
@@ -6508,6 +6525,10 @@
          <value>1</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="AirQuality" name="spiSlaveSelect"/>
+         <value></value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="SPI1" registerAlias="SPISTATL" settingAlias="SPITUR"/>
          <value>disabled</value>
       </entry>
@@ -6700,6 +6721,10 @@
          <value>1</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="AirQuality" name="intPin"/>
+         <value></value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCCON"/>
          <value>256</value>
       </entry>
@@ -6857,7 +6882,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="Custom Name RB14"/>
-         <value/>
+         <value>AirQuality</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="Custom Name RB13"/>
@@ -7276,6 +7301,10 @@
          <value>0</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="AirQuality" name="resetEnable"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="I2CSIMPLE" name="enableModule"/>
          <value>disabled</value>
       </entry>
@@ -7322,6 +7351,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="SPI1" registerAlias="SPICON1L" settingAlias="CKP" alias="Idle:Low, Active:High"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="AirQuality" name="pwmEnable"/>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="TRISC" settingAlias="TRISC1"/>
@@ -7534,6 +7567,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCTUN" settingAlias="STOR" alias="disabled"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="AirQuality" name="i2cEnable"/>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="IOCFA" settingAlias="IOCFA1"/>
@@ -7836,6 +7873,10 @@
          <value>0</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="AirQuality" name="adcEnable"/>
+         <value>enabled</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="ANSA" settingAlias="ANSELA2"/>
          <value>digital</value>
       </entry>
@@ -8038,6 +8079,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART1" registerAlias="USTA" settingAlias="RIDLE" alias="ACTIVE"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="AirQuality" name="uartEnable"/>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="SPI1" registerAlias="SPICON1H" settingAlias="AUDMOD"/>
@@ -8364,6 +8409,10 @@
          <value>0</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="AirQuality" name="analogPin"/>
+         <value></value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="LATA" settingAlias="LATA3"/>
          <value>clear</value>
       </entry>
@@ -8662,6 +8711,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="SPI1" registerAlias="SPISTATL" settingAlias="SPIROV" alias="disabled"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="AirQuality" name="generateExample"/>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="REFCLKOUT_OE"/>
@@ -8989,7 +9042,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="customNameUserSet RB14"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="customNameUserSet RB15"/>
@@ -10648,6 +10701,10 @@
          <value>0</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="AirQuality" name="textSettings"/>
+         <value>5000</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCFB" settingAlias="IOCFB12" alias="disabled"/>
          <value>0</value>
       </entry>
@@ -11018,6 +11075,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="ANSC" settingAlias="ANSELC0" alias="digital"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="AirQuality" name="intEnable"/>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="ADC1" registerAlias="ADCON2" settingAlias="SMPI" alias="Generates interrupt after completion of every 17th sample/conversion operation"/>
@@ -11502,6 +11563,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="ADC1" registerAlias="ADCTMENH" settingAlias="CTMEN28" alias="enabled"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="AirQuality" name="resetPin"/>
+         <value></value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="IOCFC" settingAlias="IOCFC8"/>
@@ -12315,7 +12380,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files/adc1.h</file>
-         <hash>5e73c819e5c082bd0aa17216930fe9953c84aadb884cdbb63caec359a662115e</hash>
+         <hash>3d511677f2f6c5f11cf8211b57ba86c3faf4388394554b35ee188dce7b78b2c6</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/mcc.h</file>
@@ -12331,7 +12396,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files/pin_manager.c</file>
-         <hash>a894fbfcb2bef8cd185af16195c0adc156953fdd39d6f946c7883317e7d82edc</hash>
+         <hash>773bedc2ecf2053c63dd61263d0084b0a0ea60d865991d49e37d31d674eb2c54</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/winc/spi_flash/source/spi_flash.c</file>
@@ -12431,7 +12496,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files/pin_manager.h</file>
-         <hash>54d0311296186dee3ab6e9c16ad70efc032f9abcef1bb2968655f6cf81cfae9f</hash>
+         <hash>d63766834ef35ef7684194fe15986c76538968e98256e0533c53c090aa03dfff</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/cryptoauthlib/lib/basic/atca_basic_ecdh.c</file>
@@ -12506,8 +12571,16 @@
          <hash>c567ff32a5d12ad57f53daeeaf2873dfe1ea28a204ec91c40b64a7c98950c211</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files/AirQuality_example.h</file>
+         <hash>62195f5d9d90bd6825a46f796253407bdafffefd86c80f05bda99cdb83050898</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files/cryptoauthlib/lib/atca_execution.h</file>
          <hash>184098eeefa2694a98893bc6fde2e19f4b285a37830c15ccf1360234367986d5</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/airquality.h</file>
+         <hash>a4e0c10393f9eddbb5386b56243c4a7f6f48bc0d53e07cd463fa87fcae52a7df</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/cryptoauthlib/lib/basic/atca_basic.h</file>
@@ -12520,6 +12593,10 @@
       <entry>
          <file>mcc_generated_files/clock.h</file>
          <hash>b4ad4178b4ac9e01da8458b0fa9ba690f1f464d61d614592b7c29672fcc78454</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/airquality.c</file>
+         <hash>520cad30495e2b960e1e927190092e1fc04daeff70e31ae2c51321d7fd4f1f7e</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/clock.c</file>
@@ -12548,6 +12625,10 @@
       <entry>
          <file>mcc_generated_files/cryptoauthlib/lib/atcacert/atcacert.h</file>
          <hash>d6c5c2ed54f9388010ffd4314f5b7fa288c552c00726a6d6eab711e69b38e027</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/AirQuality_example.c</file>
+         <hash>0a64a47ae5273f9c54ce4c77d4d853dda5d7d155f4dd6b469f9be18bd6d2ae2b</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/config/cryptoauthlib_config.h</file>
