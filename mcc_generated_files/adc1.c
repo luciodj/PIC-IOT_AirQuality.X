@@ -80,41 +80,41 @@ static ADC_OBJECT adc1_obj;
 
 void ADC1_Initialize (void)
 {
-    // ASAM enabled; DMABM disabled; ADSIDL disabled; DONE disabled; DMAEN disabled; FORM Absolute decimal result, unsigned, right-justified; SAMP disabled; SSRC Internal counter ends sampling and starts conversion; MODE12 10-bit; ADON enabled; 
+    // ASAM enabled; DMABM disabled; ADSIDL disabled; DONE disabled; DMAEN disabled; FORM Absolute decimal result, unsigned, right-justified; SAMP disabled; SSRC Internal counter ends sampling and starts conversion; MODE12 10-bit; ADON enabled;
 
-   AD1CON1 = 0x8074;
+   AD1CON1 = 0x8070;
 
-    // CSCNA disabled; NVCFG0 AVSS; PVCFG AVDD; ALTS disabled; BUFM disabled; SMPI Generates interrupt after completion of every sample/conversion operation; BUFREGEN disabled; 
+    // CSCNA disabled; NVCFG0 AVSS; PVCFG AVDD; ALTS disabled; BUFM disabled; SMPI Generates interrupt after completion of every sample/conversion operation; BUFREGEN disabled;
 
    AD1CON2 = 0x0000;
 
-    // SAMC 31; EXTSAM disabled; PUMPEN disabled; ADRC RC clock; ADCS 0; 
+    // SAMC 31; EXTSAM disabled; PUMPEN disabled; ADRC RC clock; ADCS 0;
 
-   AD1CON3 = 0x9F00;
+   AD1CON3 = 0x9F01;
 
-    // CH0SA AN0; CH0SB AN0; CH0NB AVSS; CH0NA AVSS; 
+    // CH0SA AN0; CH0SB AN0; CH0NB AVSS; CH0NA AVSS;
 
    AD1CHS = 0x0000;
 
-    // CSS30 disabled; CSS29 disabled; CSS28 disabled; 
+    // CSS30 disabled; CSS29 disabled; CSS28 disabled;
 
    AD1CSSH = 0x0000;
 
-    // CSS9 disabled; CSS8 disabled; CSS7 disabled; CSS6 disabled; CSS5 disabled; CSS4 disabled; CSS3 disabled; CSS2 disabled; CSS15 disabled; CSS1 disabled; CSS14 disabled; CSS0 disabled; CSS13 disabled; CSS12 disabled; CSS11 disabled; CSS10 disabled; 
+    // CSS9 disabled; CSS8 disabled; CSS7 disabled; CSS6 disabled; CSS5 disabled; CSS4 disabled; CSS3 disabled; CSS2 disabled; CSS15 disabled; CSS1 disabled; CSS14 disabled; CSS0 disabled; CSS13 disabled; CSS12 disabled; CSS11 disabled; CSS10 disabled;
 
    AD1CSSL = 0x0000;
 
-    // CTMEN30 disabled; CTMEN29 disabled; CTMEN28 disabled; 
+    // CTMEN30 disabled; CTMEN29 disabled; CTMEN28 disabled;
 
    AD1CTMENH = 0x0000;
 
-    // VBGEN3 disabled; VBGEN2 disabled; VBGEN1 disabled; 
+    // VBGEN3 disabled; VBGEN2 disabled; VBGEN1 disabled;
 
    ANCFG = 0x0000;
 
 
    adc1_obj.intSample = AD1CON2bits.SMPI;
-   
+
 }
 
 void ADC1_Start(void)
@@ -145,7 +145,7 @@ uint16_t ADC1_ConversionResultGet(void)
 }
 bool ADC1_IsConversionComplete( void )
 {
-    return AD1CON1bits.DONE; //Wait for conversion to complete   
+    return AD1CON1bits.DONE; //Wait for conversion to complete
 }
 void ADC1_ChannelSelect( ADC1_CHANNEL channel )
 {
@@ -155,14 +155,14 @@ void ADC1_ChannelSelect( ADC1_CHANNEL channel )
 uint16_t ADC1_GetConversion(ADC1_CHANNEL channel)
 {
     ADC1_ChannelSelect(channel);
-    
+
     ADC1_Start();
-    ADC1_Stop();
-    
+//    ADC1_Stop();
+
     while (!ADC1_IsConversionComplete())
     {
     }
-       
+
     return ADC1_ConversionResultGet();
 }
 

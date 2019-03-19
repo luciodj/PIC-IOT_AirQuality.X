@@ -27,7 +27,7 @@
 
 
 static double Rs_CleanAir;
-static double Ro_Air = 5000;
+static double Ro_Air = 3.3;
 static uint8_t isInitialized = 2;
 
 void AirQuality_Initialize(void){
@@ -35,7 +35,6 @@ void AirQuality_Initialize(void){
     double sensorValue;
     double sensorAverage;
     double sensorVoltage;
-    double ratio;
 
     sensorValue = 0.0;
 
@@ -59,7 +58,6 @@ void AirQuality_Initialize(void){
 double AirQuality_GetReadings(void){
 
     double sensorValue;
-    double sensorAverage;
     double sensorVoltage;
 
     double Rs_Air;

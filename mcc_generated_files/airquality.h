@@ -25,8 +25,8 @@
 #define	AIRQUALITY_H
 
 #define ADC_VREF                         (3.3)
-#define ADC_RESOLUTION_IN_BITS            16
-#define ADC_RANGE_VALUE                  (2^ADC_RESOLUTION_IN_BITS)
+#define ADC_RESOLUTION_IN_BITS           10
+#define ADC_RANGE_VALUE                  (pow(2, ADC_RESOLUTION_IN_BITS))
 
 void AirQuality_Initialize(void);
 double AirQuality_GetReadings(void);

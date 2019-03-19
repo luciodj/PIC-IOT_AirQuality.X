@@ -74,13 +74,13 @@ void receivedFromCloud(uint8_t *topic, uint8_t *payload)
 // This will get called every CFG_SEND_INTERVAL only while we have a valid Cloud connection
 void sendToCloud(void)
 {
-   static char json[70];
+   static char json[100];
 
    int rawTemperature = SENSORS_getTempValue();
    int light = SENSORS_getLightValue();
-   int quality = (int)AirQuality_GetPPM();
-   int len = sprintf(json, "{\"Light\":%d,\"Temp\":%d,\"Quality\":%d}", light,rawTemperature/100, quality);
-
+   int quality = (int)(AirQuality_GetPPM()*100);
+   int len = sprintf(json, "{\"Light\":%d,\"Temp\":%d,\"Quality\":%d.%02d}", light,rawTemperature/100, quality/100, quality%100);
+   puts(json);
    if (len >0) {
       CLOUD_publishData((uint8_t*)json, len);
       LED_flashYellow();

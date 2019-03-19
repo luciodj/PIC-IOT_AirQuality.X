@@ -64,17 +64,17 @@
 */
 
 /** ADC Channel Definition
- 
- @Summary 
+
+ @Summary
    Defines the channels available for conversion
- 
+
  @Description
    This routine defines the channels that are available for the module to use.
- 
+
  Remarks:
    None
  */
-typedef enum 
+typedef enum
 {
     AirQuality =  0x6,
     LIGHT_AN =  0x8,
@@ -99,7 +99,7 @@ typedef enum
     This routine initializes the ADC driver instance for : 1
     index, making it ready for clients to open and use it. It also initializes any
     internal data structures.
-    This routine must be called before any other ADC routine is called. 
+    This routine must be called before any other ADC routine is called.
 
   @Preconditions
     None.
@@ -111,8 +111,8 @@ typedef enum
     None.
 
   @Comment
-    
- 
+
+
   @Example
     <code>
         int conversion;
@@ -126,7 +126,7 @@ typedef enum
         ADC1_Stop();
         while(!ADC1_IsConversionComplete())
         {
-            ADC1_Tasks();   
+            ADC1_Tasks();
         }
         conversion = ADC1_ConversionResultGet();
     </code>
@@ -141,9 +141,9 @@ void ADC1_Initialize (void);
 
   @Description
     This routine is used to start the sampling manually.
- 
+
   @Preconditions
-    ADC1_Initializer function should have been called 
+    ADC1_Initializer function should have been called
     before calling this function.
 
   @Param
@@ -165,9 +165,9 @@ void ADC1_Start(void);
   @Description
     This routine is used to stop the sampling manually before conversion
     is triggered.
- 
+
   @Preconditions
-    ADC1_Initializer() function should have been 
+    ADC1_Initializer() function should have been
     called before calling this function.
 
   @Param
@@ -188,12 +188,12 @@ void ADC1_Stop(void);
   @Description
     This routine is used to get the analog to digital converted values in a
     buffer. This routine gets converted values from multiple channels.
- 
+
   @Preconditions
-    This routine returns the buffer containing the conversion values only after 
-    the conversion is complete. Completion status conversion can be checked using 
+    This routine returns the buffer containing the conversion values only after
+    the conversion is complete. Completion status conversion can be checked using
     ADC1_IsConversionComplete() routine.
- 
+
   @Param
     None.
 
@@ -226,20 +226,20 @@ uint16_t ADC1_ConversionResultBufferGet(uint16_t *buffer);
   @Description
     This routine is used to get the analog to digital converted value. This
     routine gets converted values from the channel specified.
- 
+
   @Preconditions
     The channel required must be selected before calling this routine using
-    ADC1_ChannelSelect(channel). This routine returns the 
-    conversion value only after the conversion is complete. Completion status 
+    ADC1_ChannelSelect(channel). This routine returns the
+    conversion value only after the conversion is complete. Completion status
     conversion can be checked using ADC1_IsConversionComplete()
     routine.
-   
+
   @Returns
     Returns the buffer containing the conversion value.
 
   @Param
     Buffer address
-  
+
   @Example
     Refer to ADC1_Initializer}(); for an example
  */
@@ -253,17 +253,17 @@ uint16_t ADC1_ConversionResultGet(void);
     This routine is used to determine if conversion is completed. This routine
     returns the value of the DONE bit. When conversion is complete the routine
     returns 1. It returns 0 otherwise.
- 
+
   @Preconditions
-    ADC1_Initializer() function should have been 
+    ADC1_Initializer() function should have been
     called before calling this function.
- 
+
   @Returns
     Returns true if conversion is completed
 
   @Param
     None
-  
+
   @Example
     Refer to ADC1_Initializer(); for an example
  */
@@ -275,20 +275,20 @@ bool ADC1_IsConversionComplete( void );
 
   @Description
     This routine is used to select desired channel for conversion.
-  
+
   @Preconditions
-    ADC1_Initializer() function should have been 
+    ADC1_Initializer() function should have been
     called before calling this function.
- 
+
   @Returns
     None
 
   @Param
     Pass in required channel from the ADC1_CHANNEL list
-  
+
   @Example
     Refer to ADC1_Initializer(); for an example
- 
+
 */
 
 void ADC1_ChannelSelect( ADC1_CHANNEL channel );
@@ -297,19 +297,19 @@ void ADC1_ChannelSelect( ADC1_CHANNEL channel );
     Allows single conversion of a channel
 
   @Description
-    This routine is used to get a single blocking conversion of a desired 
+    This routine is used to get a single blocking conversion of a desired
     channel.
-  
+
   @Preconditions
-    ADC1_Initializer() function should have been 
+    ADC1_Initializer() function should have been
     called before calling this function.
- 
+
   @Returns
     Returns the conversion value.
 
   @Param
     Pass in required channel from the ADC1_CHANNEL list
-   
+
 */
 
 uint16_t ADC1_GetConversion(ADC1_CHANNEL channel);
@@ -319,25 +319,25 @@ uint16_t ADC1_GetConversion(ADC1_CHANNEL channel);
 
   @Description
     This routine is used to implement the tasks for polled implementations.
-  
+
   @Preconditions
-    ADC1_Initializer() function should have been 
+    ADC1_Initializer() function should have been
     called before calling this function.
- 
-  @Returns 
+
+  @Returns
     None
- 
+
   @Param
     None
- 
+
   @Example
     Refer to ADC1_Initializer(); for an example
-    
+
 */
 void ADC1_Tasks(void);
 
 
-        
+
 #ifdef __cplusplus  // Provide C++ Compatibility
 
     }
@@ -345,7 +345,7 @@ void ADC1_Tasks(void);
 #endif
 
 #endif //_ADC1_H
-    
+
 /**
  End of File
 */

@@ -37,8 +37,8 @@
 
 // mSec to Ticks and Ticks to mSec conversion. These values are based on the minimum period of the TMRx peripheral
 // Note that these values have been rounded to the nearest power of two to make the calculations faster at runtime
-#define timeout_mSecToTicks(a)     ( ((uint32_t)(a)) * 64UL )
-#define timeout_ticksToMsec(a)     ( ((uint32_t)(a)) / 64UL )
+#define timeout_mSecToTicks(a)     ( ((uint32_t)(a)) * 32UL )
+#define timeout_ticksToMsec(a)     ( ((uint32_t)(a)) / 32UL )
 
 typedef  uint32_t (*timercallback_ptr_t)(void *payload);
 

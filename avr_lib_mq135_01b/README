@@ -1,0 +1,27 @@
+==================================================
+MQ135 lib
+==================================================
+= Copyright (c) Davide Gironi, 2013              =
+= http://davidegironi.blogspot.it/               =
+==================================================
+
+
+MQ135 is an Air Quality Sensor suitable for detecting of NH3, Alcohol, Benzene
+and other gases.
+This library reads the voltage output from this sensor and transform it to
+gas related physical measure.
+The "sensitivity characteristics of the MQ-135" figure of the datasheet
+it is used to convert the output from the sensor to the related ppm physical
+charateristic for the gas under test.
+
+Setup parameters can be found in file mq135.h
+
+
+Devel Notes
+-----------
+This library was developed on Eclipse, built with avr-gcc on Atmega8 @ 1MHz.
+
+
+License
+-------
+Please refer to LICENSE file for licensing information.
