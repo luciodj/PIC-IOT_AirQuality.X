@@ -61,11 +61,11 @@
     Defines the object required for the status of the queue.
 */
 
-static volatile uint8_t *rxTail;
+static uint8_t * volatile rxTail;
 static uint8_t *rxHead;
 static uint8_t *txTail;
-static volatile uint8_t *txHead;
-static volatile bool rxOverflowed;
+static uint8_t * volatile txHead;
+static bool volatile rxOverflowed;
 
 /** UART Driver Queue Length
 
@@ -292,7 +292,7 @@ int __attribute__((__section__(".libc.write"))) write(int handle, void *buffer, 
 
     for(i=0; i<len; i++)
     {
-        while(UART1_is_tx_ready() == false)
+        while(UART1_IsTxReady() == false)
         {
         }
 
@@ -303,7 +303,7 @@ int __attribute__((__section__(".libc.write"))) write(int handle, void *buffer, 
 }
 
 /* !!! Deprecated API - This function may not be supported in a future release !!! */
-uint8_t __attribute__((deprecated)) UART1_RxDataAvailable(void)
+static uint8_t UART1_RxDataAvailable(void)
 {
     uint16_t size;
     uint8_t *snapshot_rxTail = (uint8_t*)rxTail;

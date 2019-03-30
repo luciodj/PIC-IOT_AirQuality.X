@@ -209,7 +209,7 @@ void timeout_flushAll(void)
 
 // Deletes a timer from a list and returns true if the timer was found and 
 //     removed from the list specified
-bool timeout_deleteHelper(timerStruct_t * volatile *list, timerStruct_t *timer)
+bool __attribute__((optimize(0))) timeout_deleteHelper(timerStruct_t * volatile *list, timerStruct_t *timer)
 {
     bool retVal = false; 
     if (*list == NULL)

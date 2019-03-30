@@ -413,6 +413,7 @@
         <itemPath>mcc_generated_files/traps.c</itemPath>
         <itemPath>mcc_generated_files/spi1_driver.c</itemPath>
         <itemPath>mcc_generated_files/airquality.c</itemPath>
+        <itemPath>mcc_generated_files/AirQuality_example.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>
@@ -431,7 +432,7 @@
         <targetDevice>PIC24FJ128GA705</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>Simulator</platformTool>
+        <platformTool>nEdbgTool</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>1.36</languageToolchainVersion>
         <platform>4</platform>
@@ -457,7 +458,7 @@
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
         <makeCustomizationPreStep></makeCustomizationPreStep>
-        <makeCustomizationPostStepEnabled>true</makeCustomizationPostStepEnabled>
+        <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep>cp ${ImagePath} /Volumes/CURIOSITY/code.hex</makeCustomizationPostStep>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
@@ -609,6 +610,13 @@
         <property key="periphComp6.gte" value="gt"/>
         <property key="reset.scl" value="false"/>
         <property key="reset.type" value="MCLR"/>
+        <property key="tracecontrol.include.timestamp" value="summarydataenabled"/>
+        <property key="tracecontrol.select" value="0"/>
+        <property key="tracecontrol.stallontracebufferfull" value="false"/>
+        <property key="tracecontrol.timestamp" value="0"/>
+        <property key="tracecontrol.tracebufmax" value="546000"/>
+        <property key="tracecontrol.tracefile" value="defmplabxtrace.log"/>
+        <property key="tracecontrol.traceresetonrun" value="false"/>
         <property key="uart0io.output" value="window"/>
         <property key="uart0io.outputfile" value=""/>
         <property key="uart0io.uartioenabled" value="false"/>
